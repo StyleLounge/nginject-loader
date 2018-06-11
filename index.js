@@ -21,7 +21,7 @@ function loader(content, sourceMap) {
 
   // path of the file being processed
   var filename = path.relative(this.rootContext || process.cwd(), this.resourcePath).replace(/\\/g, '/'),
-      options  = loaderUtils.getOptions(this.query),
+      options  = loaderUtils.parseQuery(this.query),
       useMap   = loader.sourceMap || options.sourceMap;
 
   // make sure the AST has the data from the original source map
